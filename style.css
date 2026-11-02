@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: Paper;
+	src: url("LibertinusPaperVF.ttf");
+}
+
+html {
+	overflow-y: hidden;
+	overflow-x: auto;
+	background-image: url("Paper_Texture.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+@keyframes shred {
+	from { font-variation-settings: "SRED" 0; }
+	to   { font-variation-settings: "SRED" 100; }
+}
+
+body {
+	font-family: Paper;
+	height: 100vh;
+	animation: shred 2s ease-in-out infinite alternate;
+  color: rgb(107, 97, 40)
+}
+
+
+.container {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 600px;
+	gap: 80px;
+	height: 100vh;
+	padding: 40px;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	transform-origin: center left;   
+	transition: transform 0.8s;
+  justify-content: center;
+
+  border: 10px solid rgba(90, 67, 13, 0.5);
+	padding: 20px;
+  border-style: ridge;
+}
+
+.page:hover {
+	transform: perspective(1500px) rotateY(-25deg);
+  box-shadow: 20px 20px 60px rgba(255, 242, 96, 0.5);
+}
+
+h1 {
+	font-size: 70px;
+	line-height: 65px;
+}
+
+h2 {
+	font-size: 60px;
+	line-height: 55px;
+}
+
+h3 {
+	font-size: 50px;
+	line-height: 45px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 24px;
+	text-wrap: balance;
+}
+
+h1, h2 {
+	border-bottom: 2.5px solid rgb(107, 97, 40);
+	padding-bottom: 15px;
+}
